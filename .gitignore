@@ -1,0 +1,20 @@
+HELP.md
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
+/bin/
+/ExtentReportV5/
+/gradle-output/
+.settings
+.classpath
+.project
+.idea
+*.iws
+*.iml
+*.ipr
+.vscode/
+target/
+!**/src/main/**/target/
+!**/src/test/**/target/
