@@ -1,5 +1,6 @@
 package utils;
 
+import actions.common.GlobalConstants;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -34,10 +35,8 @@ public class IssueInfo implements RequestCapability {
     }
 
     private void getIssueInfo(){
-        String email = "hiennd.tnhp@gmail.com";
-        String apiToken = "cLXIhJJ2gL3pOphVZc4U1FA6";
         String getIssuePath = "/rest/api/3/issue/" + issueKey;
-        String encodedCreStr = AuthenticationHandler.encodedCredStr(email, apiToken);
+        String encodedCreStr = AuthenticationHandler.encodedCredStr(GlobalConstants.EMAIL, GlobalConstants.JIRA_TOKEN);
 
         // Form up
         RequestSpecification request = given();

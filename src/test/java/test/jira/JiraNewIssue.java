@@ -23,16 +23,14 @@ public class JiraNewIssue extends BaseTest implements RequestCapability {
         String baseUri = GlobalConstants.BASE_URI;
         String path ="/rest/api/3/issue";
         String projectKey = GlobalConstants.PROJECT_KEY;
-        String email = "hiennd.tnhp@gmail.com";
-        String apiToken = "cLXIhJJ2gL3pOphVZc4U1FA6";
-        String encodedCreStr = AuthenticationHandler.encodedCredStr(email, apiToken);
+        String encodedCreStr = AuthenticationHandler.encodedCredStr(GlobalConstants.EMAIL, GlobalConstants.JIRA_TOKEN);
         // Request Object
         RequestSpecification request = given();
+//        RequestSpecification request = getAppInfo(path);
         request.baseUri(baseUri);
         request.header(defaultHeader);
         request.header(acceptJSONHeader);
         request.header(getAuthenticatedHeader.apply(encodedCreStr));
-//        RequestSpecification request = getAppInfo(path);
 
         // Define body data
         ProjectInfo projectInfo = new ProjectInfo(baseUri,projectKey);
@@ -80,5 +78,9 @@ public class JiraNewIssue extends BaseTest implements RequestCapability {
         issueInfoDetail = issueInfo.getIssueInfoDetail();
         String latestIssueStatus = issueInfoDetail.get("status");
         System.out.println("latestIssueStatus: " + latestIssueStatus);
+
+        // DELETE CREATED JIRA TASK.
+        String deleteIssuePath = "/rest/api/3/issue/" + CREATED_ISSUE_KEY;
+        request.delete(deleteIssuePath).prettyPrint();
     }
 }
