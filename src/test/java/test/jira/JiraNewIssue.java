@@ -10,7 +10,6 @@ import org.apache.commons.lang3.RandomStringUtils;
 import actions.common.GlobalConstants;
 import builder.IssueContentBuilder;
 import builder.TransitionContentBuilder;
-import common.BaseTest;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;

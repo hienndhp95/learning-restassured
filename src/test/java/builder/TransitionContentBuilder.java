@@ -1,13 +1,13 @@
 package builder;
 
-import model.TransitionIssue;
+import model.IssueTransition;
 
 public class TransitionContentBuilder {
-    private TransitionIssue transitionIssue;
+    private IssueTransition transitionIssue;
 
     public String build(String transitionId){
-        TransitionIssue.TransitionId id = new TransitionIssue.TransitionId(transitionId);
-        transitionIssue = new TransitionIssue(id);
+        IssueTransition.Transition id = new IssueTransition.Transition(transitionId);
+        transitionIssue = new IssueTransition(id);
         return BodyJSONBuilder.getJSONContent(transitionIssue);
     }
 }
