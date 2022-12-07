@@ -5,8 +5,7 @@ HELP.md
 # Ignore Gradle build output directory
 build
 /bin/
-/ExtentReportV5/
-/gradle-output/
+/allure-results/
 .settings
 .classpath
 .project
