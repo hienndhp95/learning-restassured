@@ -1,8 +1,8 @@
-package test;
+package test.jira;
 
 import org.testng.annotations.*;
 
-public class TestNGHooks2 {
+public class TestNGHooks {
 
     @Test
     public void testSth(){
