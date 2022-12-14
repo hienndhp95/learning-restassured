@@ -12,11 +12,11 @@ import java.util.Map;
 
 public class ProjectCategoriesFlow {
     private static final String issuePathPrefix="/rest/api/3/projectCategory";
-    private final RequestSpecification request;
+    private RequestSpecification request;
     private Response response;
-    private String projectID;
-    private final String randomName;
-    private final String description;
+    private static String projectID;
+    private String randomName;
+    private String description;
 
     public ProjectCategoriesFlow(RequestSpecification request, String name, String description) {
         this.request = request;
