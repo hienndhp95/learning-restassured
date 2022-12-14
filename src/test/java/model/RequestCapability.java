@@ -16,7 +16,7 @@ public interface RequestCapability {
 //    }
 
     Function<String, Header> getAuthenticatedHeader = encodedCredStr -> {
-        if (encodedCredStr==null||encodedCredStr.isEmpty()||encodedCredStr.isBlank()){
+        if (encodedCredStr==null||encodedCredStr.isEmpty()){
             throw new IllegalArgumentException("[ERR] encodedCredStr can't be null!");
         }
         return new Header("Authorization","Basic " + encodedCredStr);
