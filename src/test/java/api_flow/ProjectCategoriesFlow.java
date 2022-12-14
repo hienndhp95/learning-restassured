@@ -4,7 +4,6 @@ import actions.common.GlobalConstants;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import org.apache.commons.lang3.RandomStringUtils;
 import org.json.simple.JSONObject;
 import org.testng.Assert;
 
@@ -13,14 +12,11 @@ import java.util.Map;
 
 public class ProjectCategoriesFlow {
     private static final String issuePathPrefix="/rest/api/3/projectCategory";
-    private RequestSpecification request;
+    private final RequestSpecification request;
     private Response response;
-    private static String projectCategoryName;
-    private String description;
-    private String baseUri;
-    private static String projectID;
-
-    private String randomName;
+    private String projectID;
+    private final String randomName;
+    private final String description;
 
     public ProjectCategoriesFlow(RequestSpecification request, String name, String description) {
         this.request = request;
@@ -49,8 +45,6 @@ public class ProjectCategoriesFlow {
         response = request.body(data.toJSONString()).post(issuePathPrefix);
         Map<String,String> responseBody = JsonPath.from(response.getBody().asString()).get();
         projectID = responseBody.get("id");
-        projectCategoryName = responseBody.get("name");
-        description = responseBody.get("description");
     }
 
     public void updateProjectCategory(){
