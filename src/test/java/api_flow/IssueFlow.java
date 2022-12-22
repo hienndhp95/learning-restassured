@@ -26,7 +26,7 @@ public class IssueFlow {
     private IssueFields issueFields;
     private RequestSpecification request;
     private Response response;
-    private String projectKey;
+    private final String projectKey;
     private String baseUri;
     private String status ;
     static {

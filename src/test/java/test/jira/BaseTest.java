@@ -22,7 +22,7 @@ public class BaseTest implements RequestCapability {
         encodedCreStr = AuthenticationHandler.encodedCredStr(GlobalConstants.EMAIL, GlobalConstants.JIRA_TOKEN);
         baseUri = GlobalConstants.BASE_URI;
         projectKey = GlobalConstants.PROJECT_KEY;
-        deleteAllureReport();
+//        deleteAllureReport();
     }
 
     @BeforeTest

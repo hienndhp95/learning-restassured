@@ -3,6 +3,7 @@
     <test name="Jira - Issue E2E">
         <classes>
             <class name="test.jira.ProjectCategoryCRUD"/>
+            <class name="test.jira.JiraIssueCRUD"/>
         </classes>
     </test>
 </suite>
